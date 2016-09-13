@@ -40,7 +40,12 @@ public abstract class Command {
      * Executes the command and returns the result.
      */
     public abstract CommandResult execute();
-
+    
+    /**
+     * Checks for mutation of data by commands
+     */
+    public abstract boolean isMutating();
+    
     /**
      * Supplies the data the command will operate on.
      */
@@ -48,7 +53,7 @@ public abstract class Command {
         this.addressBook = addressBook;
         this.relevantPersons = relevantPersons;
     }
-
+    
     /**
      * Extracts the the target person in the last shown list from the given arguments.
      *
